@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxo Fashion - Moda Feminina com Estilo e Qualidade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-light:#9C27F5;
+            --purple-accent: #27F5F2;
+            --blue-light: #B427F5;
+            --blue-accent: #7DBEDB;
+            --dark: #2C1B47;
+            --gold: #D4AF37;
+            --DOURADO: #CC27F5;
+			--branco: #FAFAFA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: linear-gradient(135deg, var(--purple-light) 0%, var(--blue-light) 100%);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, rgba(204, 39, 245, 0.95) 0%, rgba(195, 228, 245, 0.95) 100%);
+            padding: 1.5rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(44, 27, 71, 0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-family: 'georgian', serif;
+            color: var(--dark);
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--purple-accent);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: var(--purple-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(183, 148, 196, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(125, 190, 219, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -100px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30px) translateX(20px); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--branco);
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--purple-accent), var(--blue-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            color: var(--branco);
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, var(--purple-accent), var(--blue-accent));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(183, 148, 196, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(183, 148, 196, 0.5);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--purple-accent);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(44, 27, 71, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(44, 27, 71, 0.08);
+            animation: fadeInUp 1s ease-out backwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(183, 148, 196, 0.2);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--purple-light), var(--blue-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--dark);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 5%;
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 15px 40px rgba(44, 27, 71, 0.1);
+            animation: fadeInUp 1s ease-out backwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.2s; }
+        .product-card:nth-child(2) { animation-delay: 0.4s; }
+        .product-card:nth-child(3) { animation-delay: 0.6s; }
+        .product-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(183, 148, 196, 0.25);
+        }
+
+        .product-image {
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image.vestidos {
+            background: linear-gradient(135deg, #FFE5F1, #E8D5F2);
+        }
+
+        .product-image.camisas {
+            background: linear-gradient(135deg, #C3E4F5, #B5E7FF);
+        }
+
+        .product-image.shorts {
+            background: linear-gradient(135deg, #FFE8D6, #FFD4B8);
+        }
+
+        .product-image.sapatos {
+            background: linear-gradient(135deg, #E8D5F2, #D4C5E8);
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .product-content p {
+            color: var(--dark);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .product-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, var(--purple-accent), var(--blue-accent));
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--purple-accent), var(--blue-accent));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            left: -50px;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -150px;
+            right: -100px;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: white;
+            color: var(--purple-accent);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button-white:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: blue;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--blue-light);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--purple);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .products-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hamburger menu for mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(232, 213, 242, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: 0.3s;
+            }
+
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"> <img src = "599887.png" height= "120px"> </img>LUXO <span>FASHION</span></div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Descubra o <span>Luxo</span> que Você Merece<img src = "coraçao.png" height= "90px"> </img></h1>
+                <p>Moda feminina de alta qualidade com entrega rápida. Vestidos, camisas, shorts e sapatos que combinam elegância, conforto e estilo único.</p>
+                <a href="#produtos" class="cta-button">Explore Nossa Coleção</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-placeholder"><img src = "logo principal.webp" height= "400px"> </img></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="diferenciais">
+        <div class="features-container">
+            <h2 class="section-title">Por Que Escolher a Luxo Fashion?</h2>
+            <p class="section-subtitle">Qualidade, estilo,rapidez em cada detalhe e funcionaios competentes</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><img src = "estrela.webp" height= "150px"></img> </div>
+                    <h3>Alta Qualidade</h3>
+                    <p>Tecidos premium e acabamento impecável em todas as nossas peças. Vestidos e camisas que duram e mantêm a beleza lavagem após lavagem.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><img src = "foguete-logo.png" height= "150px"></img></div>
+                    <h3>Entrega Veloz</h3>
+                    <p>Receba suas peças rapidamente com nosso sistema de entrega veloz. Porque você não precisa esperar para ficar belíssima</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><img src = "pintura.png" height= "140px"></img></div>
+                    <h3>Variedade de Estilos</h3>
+                    <p>Todas as cores e estampas que você imaginar. Das peças mais clássicas às mais ousadas, temos o estilo perfeito para você escolher.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="produtos">
+        <div class="products-container">
+            <h2 class="section-title">Nossa Coleção</h2>
+            <p class="section-subtitle">Peças selecionadas especialmente para você</p>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image vestidos"><img src = "3893226.png" height= "200px"></img></div>
+                    <div class="product-content">
+                        <h3>Vestidos</h3>
+                        <p>Vestidos de todas as cores e estampas, perfeitos para qualquer ocasião. Qualidade premium que você pode sentir.</p>
+                        <span class="product-tag">Todas as Cores</span>
+                        <span class="product-tag">Estampados</span>
+                    </div>		
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image camisas"><img src = "blusa.webp" height= "200px"></img></div>
+                    <div class="product-content">
+                        <h3>Camisas</h3>
+                        <p>Camisas versáteis em todas as cores e estampas. Do casual ao sofisticado, temos a peça ideal para seu guarda-roupa.</p>
+                        <span class="product-tag">Todas as Cores</span>
+                        <span class="product-tag">Estampadas</span>
+                    </div> 		
+                </div>
+                <div class="product-card">
+                    <div class="product-image shorts"><img src = "short.webp" height= "200px"></img></div>
+                    <div class="product-content">
+                        <h3>Shorts</h3>
+                        <p>Shorts confortáveis e estilosos para os dias quentes. Combine com nossas camisas e crie looks incríveis!</p>
+                        <span class="product-tag">Conforto</span>
+                        <span class="product-tag">Estilo</span>                                                                       
+                    </div >		
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image sapatos"><img src = "salto alto.png" height= "250px"></img></div>
+                    <div class="product-content">
+                        <h3>Sapatos</h3>
+                        <p>Sapatos elegantes disponíveis em vermelho, marrom e preto. Complete seu look com o calçado perfeito!</p>
+                        <span class="product-tag">vermelho</span>
+                        <span class="product-tag">Marrom</span>
+                        <span class="product-tag">Preto</span>
+                    </div> 		
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contato">
+        <div class="cta-content">
+            <h2>Pronta para Transformar seu Look?<img src = "emoji.png" height= "250px"></img></h2>
+            <p>Entre em contato conosco e descubra a coleção completa da Luxo Fashion. Qualidade e elegância ao seu alcance!</p>
+            <a href="https://wa.me/559191582990" class="cta-button-white">Fale Conosco</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Luxo Fashion</h3>
+                <p>Moda feminina de qualidade com entrega rápida. Elegância e estilo que você merece.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <a href="#inicio">Início</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#contato">Contato</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Email: contato@luxofashion.com</p>
+                <p>WhatsApp: 99158-2990</p>
+                <p>Instagram: @luxofashion.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Horário</h3>
+                <p>Segunda a Sexta: 9h às 18h</p>
+                <p>Sábado: 9h às 14h</p>
+                <p>Domingo: 8h ás 12h</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Luxo Fashion.Venha conhecer nossas peças.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navMenu').classList.remove('active');
+                }
+            });
+        });
+
+        // Add scroll animation trigger
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .product-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
