@@ -1,0 +1,45 @@
+╔═══════════════════════════════════════════════════════════╗
+║     GUIA RÁPIDO - HOSPEDAGEM NO GITHUB PAGES            ║
+╚═══════════════════════════════════════════════════════════╝
+
+📋 CHECKLIST RÁPIDO:
+
+□ 1. Criar conta no GitHub (se ainda não tiver)
+     → Acesse: https://github.com/signup
+
+□ 2. Criar novo repositório
+     → Nome: luxo-fashion (ou outro nome)
+     → Público ✓
+     → NÃO adicionar README
+
+□ 3. Fazer upload do arquivo index.html
+     → Use "uploading an existing file"
+     → Ou use Git se souber
+
+□ 4. Ativar GitHub Pages
+     → Settings → Pages
+     → Source: Deploy from a branch
+     → Branch: main / (root)
+     → Save
+
+□ 5. Aguardar 2-5 minutos
+
+□ 6. Acessar seu site!
+     → https://SEU-USUARIO.github.io/luxo-fashion/
+
+═══════════════════════════════════════════════════════════
+
+💡 DICA: Se você não tem experiência com Git, use a Opção A
+(upload direto pelo site do GitHub). É muito mais simples!
+
+═══════════════════════════════════════════════════════════
+
+🆘 PRECISA DE AJUDA?
+
+- Documentação GitHub Pages: https://pages.github.com
+- Tutorial em português: https://docs.github.com/pt
+
+═══════════════════════════════════════════════════════════
+
+✨ Seu site estará no ar em minutos!
+
